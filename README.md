@@ -79,6 +79,17 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+
+  React JS is a component based UI library that gives developers the power to focus on describing their user interfaces instead of manually manipulating the DOM, which is time consuming. It includes a markup-like language called JSX, which provides the ability to represent JS logic and HTML structure in the same block of code, which feels more natural and less error prone. Once a component is created it can easily be called upon and rendered within any other component in the program, keeping code clean, declarative and modular. 
+
 1. Describe component state.
+
+  Component state is the data that lives inside of a component. This data or state variable is used to determine what actions will be taken by the component. The state of a component may be altered by other components, triggering a re-rendering of the component that is holding state. 
+
 1. Describe props.
+
+  Props are data that is passed down from a parent component to a child component. This is done by adding an "attribute" like code piece, with the desired prop value, to the "HTML element" like component call inside of the JSX return. The child component will then receive any props that are passed down through its argument.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+  Side effects are when a component leaves a lasting effect on an area that is outside of its scope, such as leaving an event listener function on the DOM after the component has already dismounted, or leaving an API call open after the initial rendering of a page. In order to sync effects to certain conditions of our component, so that we can control execution points and reverse effects, we must use the effect hook method that is built into React. Inside of this method we can use its second argument, the dependency array, to specify that we want the inner function to run on first render of the component or when a designated state is updated or when a designated prop value is changed. This is done by adding the state or prop variable name to the array. Finally, if we want to reverse a side effect we will include a return function inside of the effect hook, which can be set up accordingly to reverse the effect on dismount of the component. 
